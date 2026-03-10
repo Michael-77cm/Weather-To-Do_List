@@ -13,6 +13,8 @@ Stay organised with a to‑do list that adapts to the weather. This app combines
 - [Testing](T)
 - [Deployment](D)
 - [Credits](C)
+- 1. Credit
+  2. MarkUp 
 
 
 
@@ -22,6 +24,7 @@ Stay organised with a to‑do list that adapts to the weather. This app combines
 
 # :newspaper: Entity Relationship Diagram :newspaper:
 <img width="2688" height="1398" alt="image" src="https://github.com/user-attachments/assets/70519142-8b3b-4da5-a9ea-9ebb917932c8" />
+
 
 
 
