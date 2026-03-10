@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather + To-Do Wireframes</title>
+  <style>
+    :root {
+      --bg: #f4f6f1;
+      --ink: #1f2a1f;
+      --line: #2f3d2f;
+      --muted: #edf2eb;
+      --accent: #95b395;
+      --radius: 12px;
+      --gap: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 20%, #e2eadf 0%, transparent 35%),
+        radial-gradient(circle at 85% 75%, #dde8df 0%, transparent 30%),
+        var(--bg);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      letter-spacing: 0.04em;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin: 0 0 18px;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: start;
+    }
+
+    .card {
+      border: 2px dashed var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      background: #f9fbf7;
+      box-shadow: 0 6px 0 #dde6d9;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .frame {
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      padding: 10px;
+      display: grid;
+      gap: var(--gap);
+      min-height: 500px;
+    }
+
+    .mobile {
+      max-width: 300px;
+      margin: 0 auto;
+      grid-template-rows: auto auto auto auto 1fr auto;
+    }
+
+    .tablet {
+      max-width: 650px;
+      margin: 0 auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "header header"
+        "search search"
+        "weather todo"
+        "forecast todo"
+        "footer footer";
+      min-height: 420px;
+    }
+
+    .desktop {
+      max-width: 920px;
+      margin: 0 auto;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "header header"
+        "search search"
+        "weather todo"
+        "forecast todo"
+        "footer footer";
+      min-height: 430px;
+    }
+
+    .box {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--muted);
+      padding: 8px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 48px;
+      font-weight: 700;
+    }
+
+    .header { grid-area: header; }
+    .search { grid-area: search; }
+    .weather { grid-area: weather; min-height: 120px; }
+    .forecast { grid-area: forecast; min-height: 110px; }
+    .todo { grid-area: todo; min-height: 240px; }
+    .footer { grid-area: footer; }
+
+    .stack {
+      display: grid;
+      gap: var(--gap);
+    }
+
+    .todo-list {
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      padding: 8px;
+      width: 100%;
+      text-align: left;
+      font-weight: 600;
+      line-height: 1.5;
+      background: #f7faf6;
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #384638;
+      border-top: 1px solid #c9d6c9;
+      padding-top: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .tablet, .desktop {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "search"
+          "weather"
+          "forecast"
+          "todo"
+          "footer";
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Weather + To-Do Website Wireframes</h1>
+  <p>Low-fidelity layout references for mobile, tablet, and desktop.</p>
+
+  <section class="gallery">
+    <article class="card">
+      <h2>Mobile</h2>
+      <div class="frame mobile">
+        <div class="box">Top Bar: Logo + Menu</div>
+        <div class="box">Location Search + Current Date</div>
+        <div class="box">Current Weather Card (Temp, Icon, Condition)</div>
+        <div class="box">Hourly / Daily Forecast Strip</div>
+        <div class="box stack">
+          <div>To-Do Section</div>
+          <div class="todo-list">[ + Add Task ]<br/>- Buy groceries<br/>- Call doctor<br/>- Walk 20 min</div>
+        </div>
+        <div class="box">Bottom Nav: Weather | Tasks | Settings</div>
+      </div>
+      <div class="hint">Priority is quick glance weather and one-thumb task actions.</div>
+    </article>
+
+    <article class="card">
+      <h2>Tablet</h2>
+      <div class="frame tablet">
+        <div class="box header">Header: Logo | Weather & Task Tabs | Profile</div>
+        <div class="box search">Location Search + Alerts Banner</div>
+        <div class="box weather">Current Weather + AQI + Feels Like</div>
+        <div class="box todo stack">
+          <div>To-Do Panel</div>
+          <div class="todo-list">Task Input + Priority Filter<br/>- Team meeting prep<br/>- Pay electricity bill<br/>- Workout</div>
+        </div>
+        <div class="box forecast">Forecast Grid (Morning / Noon / Night)</div>
+        <div class="box footer">Footer: Last Sync Time + Units Toggle</div>
+      </div>
+      <div class="hint">Split-view layout supports weather context and task management side-by-side.</div>
+    </article>
+
+    <article class="card">
+      <h2>Desktop</h2>
+      <div class="frame desktop">
+        <div class="box header">Top Nav: Brand | Search | Favorites | Account</div>
+        <div class="box search">Command Bar: City Search, Date Picker, Quick Add Task</div>
+        <div class="box weather">Large Weather Hero: Current + Radar Snapshot + Highlights</div>
+        <div class="box todo stack">
+          <div>To-Do Workspace</div>
+          <div class="todo-list">Today | Upcoming | Completed<br/>- Finish project report<br/>- Book appointment<br/>- Read 20 pages</div>
+        </div>
+        <div class="box forecast">Extended Forecast + Weather Tips / Recommendations</div>
+        <div class="box footer">Status Bar: Notifications | Theme | Data Source</div>
+      </div>
+      <div class="hint">Two-column hierarchy emphasizes weather insights while keeping tasks always visible.</div>
+    </article>
+  </section>
+</body>
+</html>
