@@ -20,7 +20,7 @@ from .decorators import has_task_permission
 from .utils import create_notification
 import json
 import requests
-from datetime import datetime, timedelta
+import datetime
 from django.utils.html import strip_tags
 
 # ==================== AUTHENTICATION VIEWS ====================
@@ -546,6 +546,7 @@ def mark_notification_read(request, notification_id):
 def weather_view(request):
     """View for weather information"""
     weather_data = None
+    error_message = None
     city = request.GET.get('city', '').strip()
 
     if city:
@@ -555,30 +556,38 @@ def weather_view(request):
                 f"?q={city}&appid={settings.OPENWEATHER_API_KEY}&units=metric"
             )
             response = requests.get(url, timeout=5)
-            response.raise_for_status()
-            weather_data = response.json()
+            
+            if response.status_code == 404:
+                error_message = f"City '{city}' not found. Please try again."
+            elif response.status_code == 401:
+                error_message = "Invalid API key. Please check your settings."
+            else:
+                response.raise_for_status()
+                weather_data = response.json()
 
-            # Convert Unix timestamps to readable time
-            import datetime
-            weather_data['sys']['sunrise'] = datetime.datetime.fromtimestamp(
-                weather_data['sys']['sunrise']
-            ).strftime('%H:%M')
-            weather_data['sys']['sunset'] = datetime.datetime.fromtimestamp(
-                weather_data['sys']['sunset']
-            ).strftime('%H:%M')
+                # Convert Unix timestamps to readable time
+                weather_data['sys']['sunrise'] = datetime.datetime.fromtimestamp(
+                    weather_data['sys']['sunrise']
+                ).strftime('%H:%M')
+                weather_data['sys']['sunset'] = datetime.datetime.fromtimestamp(
+                    weather_data['sys']['sunset']
+                ).strftime('%H:%M')
 
-            # Convert visibility from metres to km
-            if 'visibility' in weather_data:
-                weather_data['visibility'] = f"{weather_data['visibility'] / 1000:.1f} km"
+                # Convert visibility metres to km
+                if 'visibility' in weather_data:
+                    weather_data['visibility'] = f"{weather_data['visibility'] / 1000:.1f} km"
 
-        except requests.exceptions.HTTPError as e:
-            weather_data = None
+        except requests.exceptions.ConnectionError:
+            error_message = "Connection error. Please check your internet connection."
+        except requests.exceptions.Timeout:
+            error_message = "Request timed out. Please try again."
         except requests.exceptions.RequestException as e:
-            weather_data = None
+            error_message = f"Error fetching weather data: {str(e)}"
 
     context = {
         'weather_data': weather_data,
         'city': city,
+        'error_message': error_message,
         'weather_api_key': settings.OPENWEATHER_API_KEY,
     }
     return render(request, 'todo/weather.html', context)
