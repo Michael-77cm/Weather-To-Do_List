@@ -50,9 +50,17 @@
                     </div>
                     
                     <div class="progress mb-3">
+                        {% if total_tasks > 0 %}
+                            {% widthratio completed_tasks total_tasks 100 as progress_width %}
+                        {% else %}
+                            {% widthratio 0 1 100 as progress_width %}
+                        {% endif %}
                         <div class="progress-bar bg-success" 
                              role="progressbar" 
-                             style="width: {% if total_tasks %}{{ completed_tasks|divisibleby:total_tasks|floatformat:2 }}{% else %}0{% endif %}%">
+                             style="width: {{ progress_width|default:'0' }}%"
+                             aria-valuenow="{{ completed_tasks }}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="{{ total_tasks }}">
                             {{ completed_tasks }}/{{ total_tasks }} Tasks
                         </div>
                     </div>

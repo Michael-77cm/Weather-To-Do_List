@@ -200,7 +200,7 @@
     </div>
 
     <!-- Category Chart -->
-    {% if categories %}
+    {% if categories|length > 0 %}
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="card">
@@ -208,6 +208,7 @@
                     <h5 class="mb-0"><i class="fas fa-chart-pie"></i> Tasks by Category</h5>
                 </div>
                 <div class="card-body">
+                    {{ categories|json_script:'category-data' }}
                     <canvas id="categoryChart" style="max-height: 300px;"></canvas>
                 </div>
             </div>
@@ -218,37 +219,40 @@
 {% endblock %}
 
 {% block extra_js %}
+{% if categories %}
 <script>
     // Category Chart
-    {% if categories %}
-    const ctx = document.getElementById('categoryChart').getContext('2d');
-    const categoryData = {{ categories|safe }};
-    
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: Object.keys(categoryData),
-            datasets: [{
-                data: Object.values(categoryData),
-                backgroundColor: [
-                    '#FF6384',
-                    '#36A2EB',
-                    '#FFCE56',
-                    '#4BC0C0',
-                    '#9966FF'
-                ]
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom'
+    const categoryCanvas = document.getElementById('categoryChart');
+    if (categoryCanvas) {
+        const ctx = categoryCanvas.getContext('2d');
+        const categoryData = JSON.parse(document.getElementById('category-data').textContent);
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(categoryData),
+                datasets: [{
+                    data: Object.values(categoryData),
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#4BC0C0',
+                        '#9966FF'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
                 }
             }
-        }
-    });
-    {% endif %}
+        });
+    }
 </script>
+{% endif %}
 {% endblock %}

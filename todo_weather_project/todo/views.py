@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.contrib import messages
 from django.utils import timezone
 from django.http import JsonResponse, HttpResponseForbidden
@@ -18,7 +19,9 @@ from .forms import (UserRegistrationForm, UserLoginForm, EnhancedTodoForm,
 from .decorators import has_task_permission
 from .utils import create_notification
 import json
+import requests
 from datetime import datetime, timedelta
+from django.utils.html import strip_tags
 
 # ==================== AUTHENTICATION VIEWS ====================
 
