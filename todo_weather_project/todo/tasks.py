@@ -161,3 +161,8 @@ def cleanup_old_notifications():
     old_notifications.delete()
     
     logger.info(f"Deleted {count} old notifications")
+
+@shared_task
+def debug_beat_task():
+    print(f"[CELERY BEAT OK] {timezone.now()}")
+    return "ok"
