@@ -12,6 +12,17 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+try:
+    import dj_database_url
+except ImportError:
+    dj_database_url = None
+
+try:
+    import whitenoise  # noqa: F401
+    HAS_WHITENOISE = True
+except ImportError:
+    HAS_WHITENOISE = False
+
 def env_bool(name, default=False):
     return os.getenv(name, str(default)).lower() in {"1", "true", "yes", "on"}
 
@@ -54,6 +65,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+if HAS_WHITENOISE:
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
@@ -84,6 +98,13 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+if os.getenv('DATABASE_URL') and dj_database_url:
+    DATABASES['default'] = dj_database_url.parse(
+        os.getenv('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True,
+    )
 
 
 # Password validation
@@ -123,6 +144,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'planner' / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+if HAS_WHITENOISE:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
