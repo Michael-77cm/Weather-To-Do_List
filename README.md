@@ -39,7 +39,7 @@ WeatherToDoList is a Django web app that combines:
 
 
 ##
-## Tech Stack / Technologies Used 
+## 🛠️ Tech Stack / Technologies Used 🛠️
 ---
 - Primary Framework: 🐍 Django (Web framework)
 - Front-end: HTML, CSS, JavaScript
@@ -52,7 +52,7 @@ WeatherToDoList is a Django web app that combines:
 - Interface Specs: ⚙️ asgiref (standard for asynchronous Python web services)
 - Open-Meteo geocoding and forecast APIs
 
-### 🛠️ Tech Stack & Dependencies
+
 
 ##
 ## Features / User Stories
