@@ -30,14 +30,7 @@ WeatherToDoList is a Django web app that combines:
 - a calendar-backed task manager for any day of the year
 - task categories, status tracking, CRUD operations, sharing, and email reminders
 
-🛠️
-🧰
-⚙️
-🧪
-🚀
-💻
-🧱
-🏗️
+
 
 
 ##
