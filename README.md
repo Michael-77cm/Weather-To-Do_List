@@ -160,7 +160,7 @@ http://127.0.0.1:8000/
 Your app is now running locally!
 
 ##
-## Credit 
+## 📖 Credit 📖
 ---
 In putting together this project 
 AI was used for putting together the base structure of code and troubleshooting code errors. 
