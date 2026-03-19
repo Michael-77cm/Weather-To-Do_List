@@ -65,7 +65,7 @@ User Experience
 
 ## Deployment and how to deploy
 The project is currently deployed on Heroku, you can find it by following the link below: 
-                           :point_down::point_down::point_down:
+:point_down::point_down::point_down:
 :point_right: (https://weather-to-do-list-e7b16ee62076.herokuapp.com/) :point_left:
 
 Cloning and Setting Up Locally
