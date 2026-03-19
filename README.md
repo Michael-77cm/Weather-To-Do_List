@@ -147,7 +147,20 @@ Apply database migrations:
 Run the Development Server:
 Start the Django development server:
 - '''python manage.py runserver'''
-'''python manage.py runserver'''
+
+<div style="position: relative;">
+
+<button onclick="navigator.clipboard.writeText(document.getElementById('code-box').innerText)"
+        style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; cursor: pointer;">
+  Copy
+</button>
+
+<pre id="code-box" style="padding: 16px; border: 1px solid #ccc; border-radius: 6px;">
+This is the text inside the box.
+You can put code, commands, or anything here.
+</pre>
+
+</div>
 
 Access the App:
 
