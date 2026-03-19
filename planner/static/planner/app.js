@@ -9,8 +9,14 @@ const weatherFeels = document.querySelector('[data-weather-feels]');
 const weatherHumidity = document.querySelector('[data-weather-humidity]');
 const weatherWind = document.querySelector('[data-weather-wind]');
 const forecastStrip = document.querySelector('[data-weather-forecast]');
+const vibeButtons = Array.from(document.querySelectorAll('[data-weather-vibe-toggle]'));
+
+const WEATHER_VIBES = ['realistic', 'playful', 'dramatic'];
+const WEATHER_VIBE_STORAGE_KEY = 'weatherToDo.visualVibe';
 
 let searchDebounce;
+let currentVibe = 'realistic';
+let lastWeatherPayload = null;
 
 function clearSuggestions() {
     if (resultsContainer) {
@@ -43,6 +49,52 @@ function createElement(tag, className) {
     return node;
 }
 
+function getSavedVibe() {
+    const saved = window.localStorage.getItem(WEATHER_VIBE_STORAGE_KEY);
+    if (saved && WEATHER_VIBES.includes(saved)) {
+        return saved;
+    }
+    return 'realistic';
+}
+
+function setActiveVibeButton() {
+    vibeButtons.forEach((button) => {
+        const isActive = button.dataset.weatherVibeToggle === currentVibe;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+    });
+}
+
+function applyVibe(nextVibe, shouldPersist = true) {
+    if (!WEATHER_VIBES.includes(nextVibe)) {
+        return;
+    }
+
+    currentVibe = nextVibe;
+    if (weatherPanel) {
+        weatherPanel.dataset.vibe = currentVibe;
+    }
+    setActiveVibeButton();
+
+    if (shouldPersist) {
+        window.localStorage.setItem(WEATHER_VIBE_STORAGE_KEY, currentVibe);
+    }
+
+    if (lastWeatherPayload) {
+        renderScene(lastWeatherPayload.condition, lastWeatherPayload.is_day);
+    }
+}
+
+function withVibeCount(baseCount) {
+    if (currentVibe === 'playful') {
+        return Math.round(baseCount * 1.25);
+    }
+    if (currentVibe === 'dramatic') {
+        return Math.round(baseCount * 1.5);
+    }
+    return baseCount;
+}
+
 function createStars(count) {
     const fragment = document.createDocumentFragment();
     for (let index = 0; index < count; index += 1) {
@@ -71,6 +123,14 @@ function renderScene(condition, isDay) {
     weatherScene.appendChild(createElement('div', 'sky-glow'));
     weatherScene.appendChild(createElement('div', 'horizon'));
 
+    if (currentVibe === 'playful' && (condition === 'clear' || condition === 'cloudy')) {
+        weatherScene.appendChild(createElement('div', 'rainbow-arc'));
+    }
+
+    if (currentVibe === 'dramatic') {
+        weatherScene.appendChild(createElement('div', 'scene-vignette'));
+    }
+
     switch (condition) {
         case 'clear': {
             const sun = document.createElement('div');
@@ -83,7 +143,7 @@ function renderScene(condition, isDay) {
                 weatherScene.appendChild(stars);
                 weatherScene.appendChild(createElement('div', 'comet'));
             }
-            weatherScene.appendChild(createParticles('sparkle', 18));
+            weatherScene.appendChild(createParticles('sparkle', withVibeCount(18)));
             break;
         }
         case 'cloudy': {
@@ -91,22 +151,22 @@ function renderScene(condition, isDay) {
             weatherScene.appendChild(createCloud('medium'));
             weatherScene.appendChild(createCloud('small'));
             weatherScene.appendChild(createElement('div', 'haze'));
-            weatherScene.appendChild(createParticles('sparkle faint', 12));
+            weatherScene.appendChild(createParticles('sparkle faint', withVibeCount(12)));
             break;
         }
         case 'rain': {
             weatherScene.appendChild(createCloud('large'));
             weatherScene.appendChild(createCloud('small'));
             weatherScene.appendChild(createElement('div', 'rain-curtain'));
-            weatherScene.appendChild(createParticles('ripple', 10));
-            weatherScene.appendChild(createParticles('raindrop', 34));
+            weatherScene.appendChild(createParticles('ripple', withVibeCount(10)));
+            weatherScene.appendChild(createParticles('raindrop', withVibeCount(34)));
             break;
         }
         case 'snow': {
             weatherScene.appendChild(createCloud('large'));
             weatherScene.appendChild(createCloud('medium'));
             weatherScene.appendChild(createElement('div', 'snow-drift'));
-            weatherScene.appendChild(createParticles('snowflake', 28));
+            weatherScene.appendChild(createParticles('snowflake', withVibeCount(28)));
             break;
         }
         case 'storm': {
@@ -116,7 +176,7 @@ function renderScene(condition, isDay) {
             weatherScene.appendChild(createElement('div', 'lightning'));
             weatherScene.appendChild(createElement('div', 'lightning secondary'));
             weatherScene.appendChild(createElement('div', 'rain-curtain'));
-            weatherScene.appendChild(createParticles('raindrop heavy', 28));
+            weatherScene.appendChild(createParticles('raindrop heavy', withVibeCount(28)));
             break;
         }
         default: {
@@ -124,7 +184,7 @@ function renderScene(condition, isDay) {
             weatherScene.appendChild(createElement('div', 'haze'));
             weatherScene.appendChild(createElement('div', 'fog-band one'));
             weatherScene.appendChild(createElement('div', 'fog-band two'));
-            weatherScene.appendChild(createParticles('fog', 10));
+            weatherScene.appendChild(createParticles('fog', withVibeCount(10)));
             break;
         }
     }
@@ -152,6 +212,8 @@ function renderWeather(data) {
     if (!weatherLocation) {
         return;
     }
+
+    lastWeatherPayload = data;
 
     const locationBits = [data.city, data.country].filter(Boolean).join(', ');
     weatherLocation.textContent = locationBits || 'Selected city';
@@ -215,6 +277,14 @@ async function fetchCities(query) {
 }
 
 if (searchInput) {
+    applyVibe(getSavedVibe(), false);
+
+    vibeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            applyVibe(button.dataset.weatherVibeToggle || 'realistic');
+        });
+    });
+
     searchInput.addEventListener('input', (event) => {
         const query = event.target.value.trim();
         clearTimeout(searchDebounce);

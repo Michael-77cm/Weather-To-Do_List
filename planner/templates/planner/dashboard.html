@@ -4,13 +4,19 @@
 
 {% block content %}
 <section class="dashboard-grid">
-    <article class="weather-panel glass-card" data-weather-panel data-condition="clear">
+    <article class="weather-panel glass-card" data-weather-panel data-condition="clear" data-vibe="realistic">
         <div class="panel-heading">
             <div>
                 <p class="eyebrow">Global weather</p>
                 <h1>Search any city worldwide</h1>
             </div>
             <p class="subtle-copy">Autocomplete uses Open-Meteo geocoding, so you can search cities across the world without maintaining a local city database dump.</p>
+        </div>
+
+        <div class="weather-vibe-controls" role="group" aria-label="Weather visual style">
+            <button type="button" class="vibe-chip is-active" data-weather-vibe-toggle="realistic">Realistic</button>
+            <button type="button" class="vibe-chip" data-weather-vibe-toggle="playful">Playful</button>
+            <button type="button" class="vibe-chip" data-weather-vibe-toggle="dramatic">Dramatic</button>
         </div>
 
         <div class="weather-controls">

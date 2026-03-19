@@ -226,6 +226,35 @@ p {
     font-size: 0.95rem;
 }
 
+.weather-vibe-controls {
+    display: flex;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    margin: 0.2rem 0 1rem;
+}
+
+.vibe-chip {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 0.45rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: transform 180ms ease, background 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.vibe-chip:hover {
+    transform: translateY(-1px);
+}
+
+.vibe-chip.is-active {
+    background: linear-gradient(135deg, rgba(255, 200, 142, 0.28), rgba(138, 212, 255, 0.18));
+    border-color: rgba(255, 219, 170, 0.68);
+    box-shadow: 0 0 0 1px rgba(255, 223, 186, 0.25) inset;
+}
+
 .weather-controls {
     position: relative;
 }
@@ -318,6 +347,103 @@ p {
 
 .weather-panel[data-condition='storm'] .weather-scene {
     box-shadow: inset 0 0 36px rgba(67, 104, 148, 0.45);
+}
+
+.weather-panel[data-vibe='realistic'] .weather-scene {
+    filter: saturate(0.95) contrast(1.02);
+}
+
+.weather-panel[data-vibe='realistic'] .sparkle,
+.weather-panel[data-vibe='realistic'] .snowflake,
+.weather-panel[data-vibe='realistic'] .raindrop {
+    opacity: 0.72;
+}
+
+.weather-panel[data-vibe='realistic'] .cloud {
+    filter: blur(1.2px) saturate(0.92);
+}
+
+.weather-panel[data-vibe='playful'] .weather-scene {
+    filter: saturate(1.35) contrast(1.04) brightness(1.06);
+}
+
+.weather-panel[data-vibe='playful'] .weather-scene::before {
+    background:
+        radial-gradient(circle at 20% 16%, rgba(255, 253, 201, 0.34), transparent 34%),
+        radial-gradient(circle at 70% 80%, rgba(150, 245, 255, 0.25), transparent 40%);
+}
+
+.weather-panel[data-vibe='playful'] .sun {
+    box-shadow: 0 0 75px rgba(255, 218, 116, 0.75);
+}
+
+.weather-panel[data-vibe='playful'] .cloud {
+    filter: blur(0.4px) saturate(1.15);
+}
+
+.weather-panel[data-vibe='playful'] .sparkle,
+.weather-panel[data-vibe='playful'] .star {
+    animation-duration: 2s;
+}
+
+.weather-panel[data-vibe='playful'] .raindrop {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(115, 208, 255, 0.95));
+}
+
+.weather-panel[data-vibe='dramatic'] .weather-scene {
+    filter: saturate(0.85) contrast(1.25) brightness(0.88);
+}
+
+.weather-panel[data-vibe='dramatic'] .weather-scene::before {
+    background:
+        radial-gradient(circle at 12% 14%, rgba(255, 255, 255, 0.1), transparent 30%),
+        radial-gradient(circle at 80% 76%, rgba(97, 134, 173, 0.16), transparent 42%);
+}
+
+.weather-panel[data-vibe='dramatic'] .weather-scene::after {
+    background: linear-gradient(180deg, rgba(5, 11, 20, 0.18) 0%, rgba(1, 3, 8, 0.58) 100%);
+}
+
+.weather-panel[data-vibe='dramatic'] .lightning {
+    animation-duration: 3s;
+}
+
+.weather-panel[data-vibe='dramatic'] .rain-curtain,
+.weather-panel[data-vibe='dramatic'] .raindrop {
+    opacity: 0.92;
+}
+
+.scene-vignette,
+.rainbow-arc {
+    position: absolute;
+    pointer-events: none;
+}
+
+.scene-vignette {
+    inset: 0;
+    z-index: 8;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.rainbow-arc {
+    left: -10%;
+    right: -10%;
+    bottom: -42%;
+    height: 170%;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0.34;
+    background: conic-gradient(
+        from 190deg at 50% 50%,
+        rgba(255, 94, 94, 0.35),
+        rgba(255, 180, 94, 0.35),
+        rgba(255, 245, 124, 0.35),
+        rgba(123, 240, 170, 0.35),
+        rgba(126, 195, 255, 0.35),
+        rgba(181, 153, 255, 0.35),
+        rgba(255, 94, 94, 0.35)
+    );
+    animation: rainbowFloat 6.4s ease-in-out infinite;
 }
 
 .sky-glow,
@@ -1114,6 +1240,17 @@ textarea {
     }
 }
 
+@keyframes rainbowFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.28;
+    }
+    50% {
+        transform: translateY(-6px) scale(1.03);
+        opacity: 0.42;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .glass-card,
     .weather-scene *,
@@ -1167,5 +1304,14 @@ textarea {
     .forecast-strip,
     .invite-columns {
         grid-template-columns: 1fr;
+    }
+
+    .weather-vibe-controls {
+        gap: 0.45rem;
+    }
+
+    .vibe-chip {
+        padding: 0.38rem 0.68rem;
+        font-size: 0.78rem;
     }
 }
