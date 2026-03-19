@@ -63,8 +63,7 @@ WeatherToDoList is a Django web app that combines:
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "habitflow-<generated-id>.herokuapp.com"
-]
+    ]
 ```
 
 
