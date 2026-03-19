@@ -26,8 +26,8 @@ function updateNowClock() {
 
     const now = new Date();
     const dateText = now.toLocaleDateString(undefined, {
-        weekday: 'short',
-        month: 'short',
+        weekday: 'long',
+        month: 'long',
         day: 'numeric',
         year: 'numeric',
     });
@@ -37,7 +37,7 @@ function updateNowClock() {
         second: '2-digit',
     });
 
-    weatherNow.textContent = `${dateText} - ${timeText}`;
+    weatherNow.textContent = `Today: ${dateText} | Time: ${timeText}`;
 }
 
 function clearSuggestions() {
@@ -298,10 +298,12 @@ async function fetchCities(query) {
     renderSuggestions(payload.results || []);
 }
 
-if (searchInput) {
+if (weatherNow) {
     updateNowClock();
     window.setInterval(updateNowClock, 1000);
+}
 
+if (weatherPanel) {
     applyVibe(getSavedVibe(), false);
 
     vibeButtons.forEach((button) => {
@@ -309,6 +311,9 @@ if (searchInput) {
             applyVibe(button.dataset.weatherVibeToggle || 'realistic');
         });
     });
+}
+
+if (searchInput) {
 
     searchInput.addEventListener('input', (event) => {
         const query = event.target.value.trim();

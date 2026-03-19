@@ -226,17 +226,23 @@ p {
     font-size: 0.95rem;
 }
 
+.weather-now-banner {
+    margin-bottom: 0.9rem;
+    display: flex;
+}
+
 .live-now {
-    margin: 0 0 0.45rem;
+    margin: 0;
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    padding: 0.35rem 0.7rem;
+    padding: 0.5rem 0.9rem;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.06);
-    color: #d9ebf7;
-    font-size: 0.82rem;
+    border: 1px solid rgba(255, 214, 163, 0.5);
+    background: linear-gradient(135deg, rgba(255, 176, 99, 0.16), rgba(146, 205, 255, 0.12));
+    color: #f3f8fc;
+    font-size: 0.86rem;
+    font-weight: 600;
     letter-spacing: 0.06em;
     font-variant-numeric: tabular-nums;
 }
