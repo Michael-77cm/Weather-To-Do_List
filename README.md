@@ -16,20 +16,6 @@ Stay organised with a to‑do list that adapts to the weather. This app combines
 - [Deployment](D)
 - [Credits](C)
 
-
-
-User Experience 
-- :white_check_mark: User Stories :white_check_mark:
-
-## Design 
-# :chart_with_upwards_trend: Wireframe Diagram :chart_with_upwards_trend:
-<img width="3342" height="1443" alt="image" src="https://github.com/user-attachments/assets/455b4789-5199-4266-b4ad-97447e9a4fbe" />
-
-
-# :newspaper: Entity Relationship Diagram (ERD) :newspaper:
-<img width="2688" height="1398" alt="image" src="https://github.com/user-attachments/assets/70519142-8b3b-4da5-a9ea-9ebb917932c8" />
-
-
 # WeatherToDoList
 
 WeatherToDoList is a Django web app that combines:
@@ -61,7 +47,16 @@ As a user of the site I should be able to:
 - :white_check_mark:Display animated weather scenes for clear, cloudy, rain, snow, storm, and mist conditions
 - :white_check_mark:Send share invite emails with accept/decline workflow and scheduled task reminder emails
 
+User Experience 
+- :white_check_mark: User Stories :white_check_mark:
 
+## Design 
+# :chart_with_upwards_trend: Wireframe Diagram :chart_with_upwards_trend:
+<img width="3342" height="1443" alt="image" src="https://github.com/user-attachments/assets/455b4789-5199-4266-b4ad-97447e9a4fbe" />
+
+
+# :newspaper: Entity Relationship Diagram (ERD) :newspaper:
+<img width="2688" height="1398" alt="image" src="https://github.com/user-attachments/assets/70519142-8b3b-4da5-a9ea-9ebb917932c8" />
 
 
 
@@ -107,7 +102,9 @@ Open your browser and go to:
 - http://127.0.0.1:8000/
 Your app is now running locally!
 
-
+## Credit 
+In putting together this project 
+AI was used for putting together the base structure of code and troubleshooting code errors. 
 
 
 
