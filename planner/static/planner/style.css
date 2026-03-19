@@ -226,6 +226,21 @@ p {
     font-size: 0.95rem;
 }
 
+.live-now {
+    margin: 0 0 0.45rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: #d9ebf7;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    font-variant-numeric: tabular-nums;
+}
+
 .weather-vibe-controls {
     display: flex;
     gap: 0.55rem;

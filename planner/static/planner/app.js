@@ -9,6 +9,7 @@ const weatherFeels = document.querySelector('[data-weather-feels]');
 const weatherHumidity = document.querySelector('[data-weather-humidity]');
 const weatherWind = document.querySelector('[data-weather-wind]');
 const forecastStrip = document.querySelector('[data-weather-forecast]');
+const weatherNow = document.querySelector('[data-weather-now]');
 const vibeButtons = Array.from(document.querySelectorAll('[data-weather-vibe-toggle]'));
 
 const WEATHER_VIBES = ['realistic', 'playful', 'dramatic'];
@@ -17,6 +18,27 @@ const WEATHER_VIBE_STORAGE_KEY = 'weatherToDo.visualVibe';
 let searchDebounce;
 let currentVibe = 'realistic';
 let lastWeatherPayload = null;
+
+function updateNowClock() {
+    if (!weatherNow) {
+        return;
+    }
+
+    const now = new Date();
+    const dateText = now.toLocaleDateString(undefined, {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+    });
+    const timeText = now.toLocaleTimeString(undefined, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+    });
+
+    weatherNow.textContent = `${dateText} - ${timeText}`;
+}
 
 function clearSuggestions() {
     if (resultsContainer) {
@@ -277,6 +299,9 @@ async function fetchCities(query) {
 }
 
 if (searchInput) {
+    updateNowClock();
+    window.setInterval(updateNowClock, 1000);
+
     applyVibe(getSavedVibe(), false);
 
     vibeButtons.forEach((button) => {
