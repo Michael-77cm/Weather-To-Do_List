@@ -21,7 +21,6 @@ Stay organised with a to‑do list that adapts to the weather. This app combines
 - [Deployment](D)
 - [Credits](C)
 
----
 # WeatherToDoList
 ---
 WeatherToDoList is a Django web app that combines:
@@ -31,9 +30,9 @@ WeatherToDoList is a Django web app that combines:
 - a calendar-backed task manager for any day of the year
 - task categories, status tracking, CRUD operations, sharing, and email reminders
 
----
-## Tech Stack
 
+## Tech Stack
+---
 - Django
 - HTML, CSS, JavaScript
 - PostgreSQL
@@ -60,8 +59,9 @@ WeatherToDoList is a Django web app that combines:
 - whitenoise==6.7.0
 - Open-Meteo geocoding and forecast APIs
 
----
+
 ## Features (User Stories)
+---
 As a user of the site I should be able to: 
 
 - :white_check_mark:Sign up, log in, and log out with Django authentication
@@ -90,8 +90,9 @@ Once you try to delete a task, this notication pops up at the top of the screen:
 Once a task is completely deleted, this notification pops up at the top of the screen: 
 <img width="2832" height="141" alt="image" src="https://github.com/user-attachments/assets/70667d53-d0f5-4f5f-83d0-6ed344c3d679" />
 
----
+
 ## User Experience 
+---
 - :white_check_mark: User Stories :white_check_mark:
 
 ---
@@ -104,8 +105,9 @@ Once a task is completely deleted, this notification pops up at the top of the s
 <img width="2688" height="1398" alt="image" src="https://github.com/user-attachments/assets/70519142-8b3b-4da5-a9ea-9ebb917932c8" />
 
 
----
+
 ## Deployment and how to deploy
+---
 The project is currently deployed on Heroku, you can find it by following the link below: :point_down:
 :point_down: :point_down: :point_down: :point_down:
 
@@ -151,8 +153,9 @@ Open your browser and go to:
 - http://127.0.0.1:8000/
 Your app is now running locally!
 
----
+
 ## Credit 
+---
 In putting together this project 
 AI was used for putting together the base structure of code and troubleshooting code errors. 
 
