@@ -135,78 +135,41 @@ cd weather-to-do_List
 
 Set Up a Virtual Environment:
 Create and activate a virtual environment:
-- python -m venv .venv
-- source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
 
 Install Dependencies:
 Install the required Python packages:
-- pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
 Set Up Environment Variables:
 - Create a .env file in the root directory and add the following:
-- SECRET_KEY=your-secret-key
-- DATABASE_URL=sqlite:///db.sqlite3  # Or your database URL
-- DEBUG=True
+```
+SECRET_KEY=your-secret-key
+DATABASE_URL=sqlite:///db.sqlite3  # Or your database URL
+DEBUG=True
+```
 
 Run Migrations:
 Apply database migrations:
-- python manage.py migrate
-
+```
+python manage.py migrate
+```
 Run the Development Server:
 Start the Django development server:
-- '''python manage.py runserver'''
-
-<div style="position: relative;">
-
-  <button
-    onclick="navigator.clipboard.writeText(document.getElementById('copy-box').innerText)"
-    style="
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      padding: 4px 8px;
-      font-size: 12px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      background: #f3f3f3;
-    "
-  >
-    Copy
-  </button>
-
-  <pre id="copy-box" style="
-      padding: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: #f8f8f8;
-      overflow: auto;
-  ">
-This is the text inside the box.
-You can put code, commands, or anything you want here.
-  </pre>
-
-</div>
-
-
-<div style="position: relative;">
-
-<button onclick="navigator.clipboard.writeText(document.getElementById('code-box').innerText)"
-        style="position: absolute; top: 8px; right: 8px; padding: 4px 8px; cursor: pointer;">
-  Copy
-</button>
-
-<pre id="code-box" style="padding: 16px; border: 1px solid #ccc; border-radius: 6px;">
-This is the text inside the box.
-You can put code, commands, or anything here.
-</pre>
-
-</div>
-
+```
+python manage.py runserver
+```
 Access the App:
 
 Open your browser and go to:
-- http://127.0.0.1:8000/
+```
+http://127.0.0.1:8000/
+```
 Your app is now running locally!
 
 ##
