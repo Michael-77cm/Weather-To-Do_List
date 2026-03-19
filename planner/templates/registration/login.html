@@ -16,6 +16,7 @@
             {{ form.as_p }}
             <button type="submit" class="primary-button">Enter dashboard</button>
         </form>
+        <p class="auth-footnote"><a href="{% url 'password_reset' %}">Forgot password?</a></p>
         <p class="auth-footnote">Need an account? <a href="{% url 'planner:signup' %}">Sign up here</a>.</p>
     </div>
 </section>
