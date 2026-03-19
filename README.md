@@ -61,10 +61,10 @@ WeatherToDoList is a Django web app that combines:
 
 
 
-Deployment and how to deploy
+#Deployment and how to deploy
 The project is currently deployed on Heroku, you can find it by following the link below:
+(https://weather-to-do-list-e7b16ee62076.herokuapp.com/)
 
-https://hmoon96-meal-planner-9c8cfb97430e.herokuapp.com/
 Cloning and Setting Up Locally
 Follow these steps to clone the repository and set it up on your local machine:
 
@@ -73,33 +73,34 @@ Clone the Repository:
 Open your terminal and run:
 git clone https://github.com/Michael-77cm/Weather-To-Do_List.git 
 cd weather-to-do_List
+
 Set Up a Virtual Environment:
-
 Create and activate a virtual environment:
-python -m venv .venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+- python -m venv .venv
+- source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 Install Dependencies:
-
 Install the required Python packages:
-pip install -r requirements.txt
+- pip install -r requirements.txt
+
 Set Up Environment Variables:
+- Create a .env file in the root directory and add the following:
+- SECRET_KEY=your-secret-key
+- DATABASE_URL=sqlite:///db.sqlite3  # Or your database URL
+- DEBUG=True
 
-Create a .env file in the root directory and add the following:
-SECRET_KEY=your-secret-key
-DATABASE_URL=sqlite:///db.sqlite3  # Or your database URL
-DEBUG=True
 Run Migrations:
-
 Apply database migrations:
-python manage.py migrate
-Run the Development Server:
+- python manage.py migrate
 
+Run the Development Server:
 Start the Django development server:
-python manage.py runserver
+- python manage.py runserver
+
 Access the App:
 
 Open your browser and go to:
-http://127.0.0.1:8000/
+- http://127.0.0.1:8000/
 Your app is now running locally!
 
 
