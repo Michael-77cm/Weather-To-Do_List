@@ -31,40 +31,26 @@ WeatherToDoList is a Django web app that combines:
 - task categories, status tracking, CRUD operations, sharing, and email reminders
 
 ##
-## Tech Stack
+## Tech Stack / Technologies Used 
 ---
 - Django
 - HTML, CSS, JavaScript
 - PostgreSQL
 - Django==4.2.28
 - requests
-- gunicorn==20.1.0
-- dj-database-url==2.2.0
-- psycopg2-binary==2.9.9
-- whitenoise==6.7.0
-- asgiref==3.11.1
-- certifi==2026.2.25
-- charset-normalizer==3.4.5
-- dj-database-url==2.2.0
-- Django==4.2.28
-- gunicorn==20.1.0
-- idna==3.11
-- psycopg2-binary==2.9.9
-- requests==2.32.5
-- setuptools==80.9.0
-- sqlparse==0.5.5
-- typing_extensions==4.15.0
-- tzdata==2025.3
-- urllib3==2.6.3
-- whitenoise==6.7.0
+- Primary Framework: Django (Web framework)
+    • Language Environment: Python 
+    • Database Interface: PostgreSQL 
+    • Web Server: Gunicorn (WSGI HTTP server for production)
+    • Static Files: WhiteNoise (allows Django to serve its own static files)
+    • Database Configuration: dj-database-url (used to configure databases via environment variables, common in Docker/Heroku setups)
+    • HTTP Client: Requests (for making API calls to other services)
+    • Interface Specs: asgiref (standard for asynchronous Python web services)
+
+
+
 - Open-Meteo geocoding and forecast APIs
 
-```python
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    ]
-```
 
 
 ##
