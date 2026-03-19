@@ -18,11 +18,6 @@ Stay organised with a to‑do list that adapts to the weather. This app combines
 - [Credits](C)
 
 ---
-***
-___
-
-
-#
 # WeatherToDoList
 
 WeatherToDoList is a Django web app that combines:
