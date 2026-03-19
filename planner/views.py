@@ -359,7 +359,7 @@ def create_task(request):
         task.save()
         create_series = bool(request.POST.get('create_series'))
         sync_recurrence_series(task, create_series=create_series)
-        messages.success(request, 'Task created.')
+        messages.success(request, 'Task has been created successfully.')
     else:
         messages.error(request, 'Task could not be created. Check the form fields.')
     return redirect('planner:dashboard')
@@ -393,7 +393,7 @@ def update_task(request, task_id):
         else:
             updated_task = form.save()
             sync_recurrence_series(updated_task, create_series=bool(request.POST.get('create_series')))
-        messages.success(request, 'Task updated.')
+        messages.success(request, 'Task has been edited successfully.')
     else:
         messages.error(request, 'Task could not be updated.')
     return redirect('planner:dashboard')
@@ -408,7 +408,7 @@ def delete_task(request, task_id):
         Task.objects.filter(owner=request.user, recurrence_series=task.recurrence_series).delete()
     else:
         task.delete()
-    messages.success(request, 'Task deleted.')
+    messages.success(request, 'Task has been deleted successfully.')
     return redirect('planner:dashboard')
 
 
