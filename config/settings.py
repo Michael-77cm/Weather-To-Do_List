@@ -9,6 +9,12 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+    import env
+
 import os
 from pathlib import Path
 
@@ -53,9 +59,9 @@ load_local_env(BASE_DIR / '.env')
 SECRET_KEY = 'django-insecure-+1+^(5o&s=@_d%s)_oe70$&v#*^c%3*b+@gv^qr+kx@cp&-4+('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
 
 # Application definition
@@ -125,6 +131,9 @@ if os.getenv('DATABASE_URL') and dj_database_url:
         ssl_require=env_bool('DB_SSL_REQUIRE', False),
     )
 
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "postgresql://neondb_owner:npg_TVDWXLNuQF84@ep-dry-dew-ag3sbe00.c-2.eu-central-1.aws.neon.tech/those_lung_blade_600749"))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
