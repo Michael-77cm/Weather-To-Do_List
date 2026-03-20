@@ -183,7 +183,7 @@ DEPLOYING TO HEROKU
 ```
 Open Settings.py and set DEBUG back to False
 Git add, commit and push your updated code to Github 
-Return to Heroku dashboard and click on Deploy tab and deploy from main branch
+Return to Heroku dashboard, go to the Deploy tab and click on deploy from main branch
 ```
 Once deployed,
 ```
