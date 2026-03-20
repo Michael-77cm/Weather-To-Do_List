@@ -189,6 +189,25 @@ CSS VALIDATION TEST
 JAVASCRIPT VALIDATION TEST 
 <img width="1596" height="1182" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
 
+### Automated Testing 
+Test Classes (24 tests across 8 categories):
+
+TaskFormValidationTests (4 tests): Title required field, whitespace handling, recurrence dates
+TaskModelTests (3 tests): Task creation, is_done property, is_recurring property
+SignUpTests (3 tests): Email requirement, duplicate email prevention, database persistence
+AuthenticationTests (3 tests): Login redirect, dashboard access control, logout enforcement
+TaskCRUDTests (4 tests): Create valid task, update, delete, toggle status
+PermissionTests (3 tests): Cross-user access denial, owner permissions
+CitySearchAPITests (2 tests): Query length validation, result format
+WeatherAPITests (2 tests): Required parameters, response structure
+
+Key Coverage:
+Form validation & error handling
+Model CRUD operations
+User authentication & session management
+Task-level permission enforcement
+External API integration
+Database persistence
 
 
 ##
