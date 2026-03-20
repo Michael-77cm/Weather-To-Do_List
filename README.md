@@ -81,12 +81,13 @@ Once you try to delete a task, this notification pops up at the top of the scree
 
 Once a task is completely deleted, this notification pops up at the top of the screen: 
 <img width="2832" height="141" alt="image" src="https://github.com/user-attachments/assets/70667d53-d0f5-4f5f-83d0-6ed344c3d679" />
-Future Enhancements: 
+Additional Features: 
 - Three vibes on the weather app to select from, these would be: realistic, playful or dramatic. 
 - A tab that shows you what today
 - A tab that shows you the time with the seconds counting down
+Future Enhancements: 
 - Being able to create a Large number of tasks in a day
-- Having the tasks to do in a day to be in a clickable format where you can click to the next task in order to being space efficient and having a nice simple functionality. 
+- Having the tasks to do in a day to be in a clickable format where you can click to the next task as an added functionality and in order to be space efficient. 
 
 ##
 ## 4. Design / User Experience  
@@ -109,8 +110,10 @@ This diagram shows how a typical user moves through the website from entry → a
   “One place for weather, calendar planning, and shared tasks.”
 - Options:
   • Log In  
-  • Create Account (Sign Up)  
-  ↓ 
+  • Create Account (Sign Up)
+
+       ↓
+
 **2. Authentication**
     ├── **Log In**
     │       • Enter username + password  
@@ -121,7 +124,7 @@ This diagram shows how a typical user moves through the website from entry → a
             • Create new account  
             • On success → Log In → Dashboard
 
-     ↓ 
+    ↓
 
 **3. Dashboard**
 - Displays:
@@ -131,7 +134,7 @@ This diagram shows how a typical user moves through the website from entry → a
   • Email notifications for task reminders 
   • Email notifications for group tasks if there are collaborators
 
-  
+      ↓
     
 **4. Core User Actions**
     ├── **View Weather**
@@ -258,7 +261,6 @@ Author
 Michael Bello
 
 GitHub: https://github.com/Michael-77cm/ 
-
 
 
 
