@@ -101,6 +101,21 @@ Once a task is completely deleted, this notification pops up at the top of the s
 # :newspaper: Entity Relationship Diagram (ERD) :newspaper:
 <img width="2688" height="1398" alt="image" src="https://github.com/user-attachments/assets/70519142-8b3b-4da5-a9ea-9ebb917932c8" />
 
+#Testing 
+### Manual Testing
+
+`camry`
+
+| Feature | Test Case | Expected Result | Actual Result |
+|---|---|---|---|
+| Sign up | User registers with valid details | Account created and verification sent | `[PASS]`|
+| Login | Existing user logs in | User redirected to dashboard | `[PASS]` |
+| Forum create | User creates a thread | Thread appears in selected category | `[PASS]` |
+| Forum edit | Author edits own thread | Changes save successfully | `[PASS]` |
+| Forum delete | Author deletes own thread | Thread removed from forum | `[PASS]` |
+| Comment create | User adds comment | Comment appears in thread | `[PASS]` |
+| Quiz flow | User completes quiz | Score shown on results page | `PASS]` |
+| Responsive layout | Open app on mobile/tablet/desktop | Layout adapts without major issues | `[PASS` |
 
 ##
 ## Deployment and how to deploy
