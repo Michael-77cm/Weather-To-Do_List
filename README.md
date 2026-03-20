@@ -9,8 +9,6 @@
 --- 
 <img width="2946" height="1680" alt="image" src="https://github.com/user-attachments/assets/2464fe5b-dbaf-4ee5-b987-c18b0933c80a" />
 
-<img width="3297" height="1671" alt="image" src="https://github.com/user-attachments/assets/c8070ac2-9539-400c-a78b-4468b145250f" />
-
 
 Stay organised with a to‑do list that adapts to the weather. This app combines your tasks with real‑time forecasts so you can plan smarter, avoid surprises, and make the most of every day. Whether it’s sunshine, rain, or anything in between, your schedule adjusts automatically to keep you on track.
 
