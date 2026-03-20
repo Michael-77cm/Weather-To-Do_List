@@ -44,7 +44,7 @@ WeatherToDoList is a Django web app that combines:
 - Interface Specs: ⚙️ [asgiref](a) (standard for asynchronous Python web services)
 - [Open-Meteo geocoding and forecast APIs](O)
 
-|**Technologies**          | **Languages / Tools** |  
+|Technologies          | Languages / Tools |  
 
 | `**Technologies**`          | `**Languages / Tools**`                                      |
 |-----------------------------|-------------------------------------------------------------|
