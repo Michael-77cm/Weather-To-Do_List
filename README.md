@@ -176,7 +176,7 @@ This diagram shows how a typical user moves through the website from entry → a
 ##
 ## 5. Testing 
 ---
-### Manual Testing
+### <div align="center"> Manual Testing</div>
 
 | `Feature` | `Test Case` | `Expected Result` | `Actual Result` |
 |---|---|---|---|
