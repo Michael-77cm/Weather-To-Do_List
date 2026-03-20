@@ -1326,6 +1326,45 @@ textarea {
     }
 }
 
+@media (max-width: 900px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .site-nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.6rem;
+    }
+
+    .panel-heading {
+        flex-direction: column;
+    }
+
+    .subtle-copy {
+        max-width: 100%;
+    }
+
+    .weather-stage {
+        gap: 0.9rem;
+    }
+
+    .weather-scene {
+        min-height: 220px;
+    }
+
+    .primary-button,
+    .ghost-button,
+    .danger-button,
+    .suggestion-item,
+    input,
+    textarea,
+    select {
+        min-height: 44px;
+    }
+}
+
 @media (max-width: 760px) {
     main,
     .site-header,
