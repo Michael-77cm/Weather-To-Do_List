@@ -190,6 +190,43 @@ JAVASCRIPT VALIDATION TEST
 <img width="1596" height="1182" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
 
 ### Automated Testing 
+
+| **Category** | **Test Class**             | **Tests** | **Focus Areas**                                      | **Status** |
+|--------------|-----------------------------|-----------|-------------------------------------------------------|------------|
+| Forms        | TaskFormValidationTests     | 4         | Title requirements, whitespace, recurrence logic      | ✅ Pass    |
+| Models       | TaskModelTests              | 3         | Creation, is_done and is_recurring properties         | ✅ Pass    |
+| Identity     | SignUpTests                 | 3         | Email validation, duplicates, DB persistence          | ✅ Pass    |
+| Security     | AuthenticationTests         | 3         | Login redirects, dashboard access, logout             | ✅ Pass    |
+| Data         | TaskCRUDTests               | 4         | Create, Update, Delete, Toggle status                 | ✅ Pass    |
+| AuthZ        | PermissionTests             | 3         | Cross-user access denial, ownership                   | ✅ Pass    |
+| API          | CitySearchAPITests          | 2         | Query length, result formatting                       | ✅ Pass    |
+| API          | WeatherAPITests             | 2         | Parameters, response structure                        | ✅ Pass    |
+| **Total**    | **8 Categories**            | **24**    |                                                       | **100%**   |
+
+Key Coverage:
+`Form validation & error handling`
+`Model CRUD operations`
+`User authentication & session management`
+`Task-level permission enforcement`
+`External API integration`
+`Database persistence`
+
+
+Category	Test Class	Tests	Focus Areas
+Forms	TaskFormValidationTests	4	Title requirements, whitespace, recurrence logic
+Models	TaskModelTests	3	Creation, is_done and is_recurring properties
+Identity	SignUpTests	3	Email validation, duplicates, DB persistence
+Security	AuthenticationTests	3	Login redirects, dashboard access, logout
+Data	TaskCRUDTests	4	Create, Update, Delete, Toggle status
+AuthZ	PermissionTests	3	Cross-user access denial, ownership
+API	CitySearchAPITests	2	Query length, result formatting
+API	WeatherAPITests	2	Parameters, response structure
+Total	8 Categories	24	
+
+
+
+
+
 Test Classes (24 tests across 8 categories):
 
 TaskFormValidationTests (4 tests): Title required field, whitespace handling, recurrence dates
@@ -201,13 +238,7 @@ PermissionTests (3 tests): Cross-user access denial, owner permissions
 CitySearchAPITests (2 tests): Query length validation, result format
 WeatherAPITests (2 tests): Required parameters, response structure
 
-Key Coverage:
-Form validation & error handling
-Model CRUD operations
-User authentication & session management
-Task-level permission enforcement
-External API integration
-Database persistence
+
 
 
 ##
