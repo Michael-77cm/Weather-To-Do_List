@@ -22,15 +22,15 @@ Stay organised with a to‑do list that adapts to the weather. This app combines
 ---
 ## :scroll:Table of Contents:scroll:  
 ---
-- [User Experience (UX)](UX)
-- [Features](Features)
-- [Design](Design)
-- [Technologies Used](T)
-- [Testing](T)
-- [Deployment](D)
-- [Credits](C)
+1. [Project Overview](UX)
+2. [Features](Features)
+3. [Design](Design)
+4. [Technologies Used](T)
+5. [Testing](T)
+6. [Deployment](D)
+7. [Credits](C)
 #
-# :snowflake: WeatherToDoList :snowflake:
+# :snowflake: 1. WeatherToDoList :snowflake:
 ---
 WeatherToDoList is a Django web app that combines:
 
@@ -43,7 +43,7 @@ WeatherToDoList is a Django web app that combines:
 
 
 ##
-## 🛠️ Tech Stack / Technologies Used 🛠️
+## 🛠️ 2. Tech Stack / Technologies Used 🛠️
 ---
 - Primary Framework: 🐍 [Django](D) (Web framework)
 - Front-end: [HTML, CSS, JavaScript](HCJ)
@@ -59,7 +59,7 @@ WeatherToDoList is a Django web app that combines:
 
 
 ##
-## 👨‍💻 Features / User Stories 👨‍💻
+## 👨‍💻 3. Features / User Stories 👨‍💻
 ---
 As a user of the site I should be able to: 
 
@@ -95,7 +95,7 @@ Once a task is completely deleted, this notification pops up at the top of the s
 - :white_check_mark: User Stories :white_check_mark:
 
 ##
-## Design 
+## 4. Design 
 ---
 # :chart_with_upwards_trend: Wireframe Diagram :chart_with_upwards_trend:
 <img width="3342" height="1443" alt="image" src="https://github.com/user-attachments/assets/455b4789-5199-4266-b4ad-97447e9a4fbe" />
@@ -105,7 +105,7 @@ Once a task is completely deleted, this notification pops up at the top of the s
 <img width="2688" height="1398" alt="image" src="https://github.com/user-attachments/assets/70519142-8b3b-4da5-a9ea-9ebb917932c8" />
 
 ##
-## Testing 
+## 5. Testing 
 ---
 ### Manual Testing
 
@@ -122,14 +122,12 @@ Once a task is completely deleted, this notification pops up at the top of the s
 | Responsive layout | Open app on mobile/tablet/desktop | Layout adapts without major issues | `[PASS` |
 
 ##
-## Deployment and how to deploy
+## 6. Deployment 
 ---
 The project is currently deployed on Heroku, you can find it by following the link below: :point_down:
 :point_down: :point_down: :point_down: :point_down:
 
 :point_right:(https://weather-to-do-list-e7b16ee62076.herokuapp.com/) :point_left:
-
-
 
 Cloning and Setting Up Locally
 Follow these steps to clone the repository and set it up on your local machine:
@@ -172,14 +170,13 @@ Start the Django development server:
 python manage.py runserver
 ```
 Access the App:
-
 Open your browser and go to:
 ```
 http://127.0.0.1:8000/
 ```
 Your app is now running locally!
 
-DEPLOYING TO HEROKU 
+`DEPLOYING TO HEROKU` 
 ```
 Open Settings.py and set DEBUG back to False
 Git add, commit and push your updated code to Github 
