@@ -92,9 +92,11 @@ Once you try to delete a task, this notification pops up at the top of the scree
 Once a task is completely deleted, this notification pops up at the top of the screen: 
 <img width="2832" height="141" alt="image" src="https://github.com/user-attachments/assets/70667d53-d0f5-4f5f-83d0-6ed344c3d679" />
 
-- There should be three vibes on the weather app to select which would be realistic, playful or dramatic
-- There should be a tab that shows you what today
-- There should be a tab that shows you the time with the seconds counting down  
+- Three vibes on the weather app to select from, these would be: realistic, playful or dramatic. 
+- A tab that shows you what today
+- A tab that shows you the time with the seconds counting down
+- Being able to create a Large number of tasks in a day
+- Having the tasks to do in a day to be in a clickable format where you can click to the next task in order to being space efficient and having a nice simple functionality. 
 
 ##
 ## User Experience 
