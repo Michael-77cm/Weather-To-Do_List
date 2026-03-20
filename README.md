@@ -110,9 +110,7 @@ This diagram shows how a typical user moves through the website from entry → a
 - Options:
   • Log In  
   • Create Account (Sign Up)  
-
-   ↓
-
+  ↓ 
 **2. Authentication**
     ├── **Log In**
     │       • Enter username + password  
@@ -123,7 +121,7 @@ This diagram shows how a typical user moves through the website from entry → a
             • Create new account  
             • On success → Log In → Dashboard
 
-    ↓ 
+     ↓ 
 
 **3. Dashboard**
 - Displays:
@@ -133,7 +131,7 @@ This diagram shows how a typical user moves through the website from entry → a
   • Email notifications for task reminders 
   • Email notifications for group tasks if there are collaborators
 
-  ↓
+  
     
 **4. Core User Actions**
     ├── **View Weather**
