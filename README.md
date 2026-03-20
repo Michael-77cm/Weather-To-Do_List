@@ -1,5 +1,5 @@
 ***
-# :sparkles: Welcome to Weather To-Do List :sparkles:
+# <div align="center"> :sparkles: Welcome to Weather To-Do List :sparkles: </div>
 Code Institute Individual Capstone Project / Final Individual Fullstack Project 
 ***
 :point_right: View the live project here: 
