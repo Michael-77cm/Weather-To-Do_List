@@ -187,7 +187,7 @@ HTML VALIDATION TEST
 CSS VALIDATION TEST 
 <img width="3789" height="963" alt="image" src="https://github.com/user-attachments/assets/54fe15e8-e5f6-45d5-bd3e-d43ea93f2791" />
 JAVASCRIPT VALIDATION TEST 
-<img width="1764" height="1287" alt="image" src="https://github.com/user-attachments/assets/0caae080-3265-4e24-8c8e-241cc540bf3b" />
+<img width="1596" height="1182" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
 
 
 
