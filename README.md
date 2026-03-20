@@ -204,22 +204,7 @@ Lighthouse Test
 <img width="1881" height="498" alt="image" src="https://github.com/user-attachments/assets/d1368099-cacd-4e9b-9f59-177bb51b869e" />
 
 
-HTML VALIDATION TEST 
-<img width="3672" height="1332" alt="image" src="https://github.com/user-attachments/assets/3b763d9c-f21a-4d09-a586-8421ebf03021" />
-CSS VALIDATION TEST 
-<img width="3789" height="963" alt="image" src="https://github.com/user-attachments/assets/54fe15e8-e5f6-45d5-bd3e-d43ea93f2791" />
-JAVASCRIPT VALIDATION TEST 
-<img width="1596" height="1182" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
-
-<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/3b763d9c-f21a-4d09-a586-8421ebf03021" />
-CSS VALIDATION TEST 
-<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/54fe15e8-e5f6-45d5-bd3e-d43ea93f2791" />
-JAVASCRIPT VALIDATION TEST 
-<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
-
-
-
-
+HTML/CSS/JAVASCRIPT VALIDATION TEST 
 <div style="display: flex; gap: 32px; align-items: flex-start; margin-bottom: 16px; justify-content: center;">
 	<div>
 		<img src="https://github.com/user-attachments/assets/3b763d9c-f21a-4d09-a586-8421ebf03021" width="480" alt="HTML Validator Screenshot" />
