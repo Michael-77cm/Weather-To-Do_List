@@ -36,16 +36,16 @@ WeatherToDoList is a Django web app that should include:
 ---
 | `Technologies`          | `Languages / Tools`                                      |
 |-----------------------------|-------------------------------------------------------------|
-| Primary Framework           | 🐎 [Django](D) (Web framework)                                   |
-| Front-end                   | 🌐📝 [HTML](H), 🎨[CSS](C), ⚡[JavaScript](J)                                      |
-| Language Environment        | 🐍 [Python](P)                                                   |
-| Database Interface          | 🐘 [PostgreSQL](P)                                             |
-| Web Server                  | 🚀 [Gunicorn](G) (WSGI HTTP server for production)              |
-| Static Files                | ❄️ [WhiteNoise](w)  (serves static files in Django)              |
-| Database Configuration      | 🔗 [dj-database-url](dj) (env‑based DB configuration)            |
-| HTTP Client                 | 📡 [Requests](R) (API calls)                                    |
-| Interface Specs             | ⚙️ [asgiref](a) (async Python web services standard)            |
-| External APIs               | 🌤️ [Open-Meteo geocoding and forecast APIs](O)                     |
+| Primary Framework           | 🐎 [Django](D) (Web framework)                              |
+| Front-end                   | 🌐📝 [HTML](H), 🎨[CSS](C), ⚡[JavaScript](J)              |
+| Language Environment        | 🐍 [Python](P)                                               |
+| Database Interface          | 🐘 [PostgreSQL](P)                                           |
+| Web Server                  | 🚀 [Gunicorn](G) (WSGI HTTP server for production)           |
+| Static Files                | ❄️ [WhiteNoise](w)  (serves static files in Django)          |
+| Database Configuration      | 🔗 [dj-database-url](dj) (env‑based DB configuration)        |
+| HTTP Client                 | 📡 [Requests](R) (API calls)                                 |
+| Interface Specs             | ⚙️ [asgiref](a) (async Python web services standard)         |
+| External APIs               | 🌤️ [Open-Meteo geocoding and forecast APIs](O)               |
 
 
 ##
@@ -172,13 +172,13 @@ This diagram shows how a typical user moves through the website from entry → a
 
 | Feature | Test Case | Expected Result | Actual Result |
 |---|---|---|---|
-| Sign up | User registers with valid details | Account created and verification sent | `[PASS]`|
-| Login | Existing user logs in | User redirected to dashboard | `[PASS]` |
-| Create Task | User creates a thread | Thread appears in selected category | `[PASS]` |
-| Edit Task | Author edits own thread | Changes save successfully | `[PASS]` |
-| Delete Task | Author deletes own thread | Thread removed from forum | `[PASS]` |
-| Comment create | User adds comment | Comment appears in thread | `[PASS]` |
-| Responsive layout | Open app on mobile/tablet/desktop | Layout adapts without major issues | `[PASS` |
+| Sign up | User registers with valid details | Account created and verification sent | ✅`Pass`|
+| Login | Existing user logs in | User redirected to dashboard | ✅`Pass` |
+| Create Task | User creates a thread | Thread appears in selected category | ✅`Pass` |
+| Edit Task | Author edits own thread | Changes save successfully | ✅`Pass` |
+| Delete Task | Author deletes own thread | Thread removed from forum | ✅`Pass` |
+| Comment create | User adds comment | Comment appears in thread | ✅`Pass` |
+| Responsive layout | Open app on mobile/tablet/desktop | Layout adapts without major issues | `Pass` |
 
 HTML VALIDATION TEST 
 <img width="3672" height="1332" alt="image" src="https://github.com/user-attachments/assets/3b763d9c-f21a-4d09-a586-8421ebf03021" />
@@ -187,11 +187,11 @@ CSS VALIDATION TEST
 JAVASCRIPT VALIDATION TEST 
 <img width="1596" height="1182" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
 
-<img width="1000" height="1332" alt="image" src="https://github.com/user-attachments/assets/3b763d9c-f21a-4d09-a586-8421ebf03021" />
+<img width="800" height="700" alt="image" src="https://github.com/user-attachments/assets/3b763d9c-f21a-4d09-a586-8421ebf03021" />
 CSS VALIDATION TEST 
-<img width="1000" height="963" alt="image" src="https://github.com/user-attachments/assets/54fe15e8-e5f6-45d5-bd3e-d43ea93f2791" />
+<img width="800" height="700" alt="image" src="https://github.com/user-attachments/assets/54fe15e8-e5f6-45d5-bd3e-d43ea93f2791" />
 JAVASCRIPT VALIDATION TEST 
-<img width="800" height="1182" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
+<img width="800" height="700" alt="image" src="https://github.com/user-attachments/assets/5f762cc6-f262-45c9-8906-f1dd60271baa" />
 
 
 
