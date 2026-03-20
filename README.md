@@ -86,6 +86,8 @@ Additional Features:
 - Three vibes on the weather app to select from, these would be: realistic, playful or dramatic. 
 - A tab that shows you what today
 - A tab that shows you the time with the seconds counting down
+
+
   
 Future Enhancements: 
 - Being able to create a Large number of tasks in a day
