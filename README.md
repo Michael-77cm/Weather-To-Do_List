@@ -51,8 +51,9 @@ WeatherToDoList is a Django web app that should include:
 ##
 ## 👨‍💻 3. Features / User Stories 👨‍💻
 ---
-As a user of the site I should be able to: 
-- :white_check_mark:Sign up, log in, and log out with Django authentication
+
+- As a user of the site I should be able to:
+ 	-:white_check_mark:Sign up, log in, and log out with Django authentication
 	- :white_check_mark:Create, read, update, delete, and share tasks
 	- :white_check_mark:Organize tasks by `work`, `personal`, `shopping`, `business`, and `wish list`
 	- :white_check_mark:Mark tasks as `in progress` or `done`
