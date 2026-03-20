@@ -80,7 +80,7 @@ As an admin I should be able to:
 
 :point_right: Link to Kanban board of Userstories: :point_right: https://github.com/users/Michael-77cm/projects/5 :point_left:
 
-#Additional Features/ Future enhancemenets: 
+# Additional Features / Future enhancemenets: 
 Website Notifications: 
 Once a task is successful created, this notification pops up at this top of the screen: 
 <img width="2886" height="153" alt="image" src="https://github.com/user-attachments/assets/a085a778-4260-4ef5-bb49-6aae96917d1b" />
@@ -90,7 +90,7 @@ Once you try to delete a task, this notification pops up at the top of the scree
 <img width="500" height="255" alt="image" src="https://github.com/user-attachments/assets/5433df75-6972-4849-a7f4-580147a1dacf" />
 Once a task is completely deleted, this notification pops up at the top of the screen: 
 <img width="2832" height="141" alt="image" src="https://github.com/user-attachments/assets/70667d53-d0f5-4f5f-83d0-6ed344c3d679" />
-
+Future Enhancements: 
 - Three vibes on the weather app to select from, these would be: realistic, playful or dramatic. 
 - A tab that shows you what today
 - A tab that shows you the time with the seconds counting down
