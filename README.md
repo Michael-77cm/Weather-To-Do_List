@@ -189,12 +189,11 @@ This diagram shows how a typical user moves through the website from entry → a
 | Edit Task | User edits own task | Changes save successfully | ✅`Pass` |
 | Delete Task | User deletes own task | Task gets deleted from todolist | ✅`Pass` |
 | Share Task | User shares a task | Recipients receive an email with details to view the task | ✅`Pass` |
-| Complet Task | User clicks on task complete | Task moves to completed section | ✅`Pass` |
+| Complete Task | User clicks on task complete | Task moves to completed section | ✅`Pass` |
 | Delete Task | User deletes own task | Thread removed from forum | ✅`Pass` |
-| Comment create | User adds comment | Comment appears in thread | ✅`Pass` |
 | Recurring Task | User ticks box for recurring task | Task appears multiple times on the calendar for the tasks duration | ✅`Pass` |
-| Upload Attachment | User clicks on upload attachment | Attachements gets uploaded to the task | ✅`Pass` |
-| Delete Attachment | User clicks deletes on an attachment | Attachment gets deleted | ✅`Pass` |
+| Upload Attachment | User clicks on upload attachment | Attachments gets uploaded to the task | ✅`Pass` |
+| Delete Attachment | User clicks delete on an attachment | Attachment gets deleted | ✅`Pass` |
 | Search a City | User starts typing the name of a city | Autocomplete helps to displays the full name of the city | ✅`Pass` |
 | Date & Time | User logs into the dashboard | Date & Time is displayed | ✅`Pass` |
 | Display Weather condition | User clicks on search button after typing a city | The weather in that city appears | ✅`Pass` |
@@ -320,7 +319,7 @@ Now your deployed app is connected to your PostgreSQL cloud database.
 ##
 ## 📖 7. Credits 📖
 ---
-Use of Ai
+Use of AI
 AI and Github Copit were used throughout this project to generate the basic structure of code, debug and resolve code errors, automate repetitive tasks, create automated tests on the website and improve the responsiveness of the website. I manually reviewed the code for accuracy, suitability, ensured there were no security issues and made changes to the code before deployment.    
 
 Author: Michael Bello
