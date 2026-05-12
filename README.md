@@ -319,7 +319,6 @@ Now your deployed app is connected to your PostgreSQL cloud database.
 ##
 ## 📖 7. Credits 📖
 ---
-Use of AI
 AI and Github Copit were used throughout this project to generate the basic structure of code, debug and resolve code errors, automate repetitive tasks, create automated tests on the website and improve the responsiveness of the website. I manually reviewed the code for accuracy, suitability, ensured there were no security issues and made changes to the code before deployment.    
 
 Author: Michael Bello
