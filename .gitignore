@@ -1,1 +1,8 @@
 .venv/
+env.py
+__pycache__/
+.env
+.env.example
+data.json
+tests.py
+planner/tests.py
