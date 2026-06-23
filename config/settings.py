@@ -131,12 +131,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 default_db_url = f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
 if dj_database_url:
+    # Only add ssl_require for non-SQLite databases in production
+    db_url = os.getenv('DATABASE_URL', default_db_url)
+    config_kwargs = {
+        'default': db_url,
+        'conn_max_age': 600,
+    }
+    if not db_url.startswith('sqlite://') and not DEBUG:
+        config_kwargs['ssl_require'] = True
+    
     DATABASES = {
-        'default': dj_database_url.config(
-            default=os.getenv('DATABASE_URL', default_db_url),
-            conn_max_age=600,
-            ssl_require=not DEBUG,
-        )
+        'default': dj_database_url.config(**config_kwargs)
     }
 else:
     DATABASES = {
@@ -145,6 +150,14 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+# Clean up OPTIONS for SQLite (remove unsupported params like sslmode)
+if DATABASES['default'].get('ENGINE', '').endswith('sqlite3'):
+    if 'OPTIONS' not in DATABASES['default']:
+        DATABASES['default']['OPTIONS'] = {}
+    # Remove any SSL-related options from SQLite
+    for key in ['sslmode', 'ssl_require']:
+        DATABASES['default'].get('OPTIONS', {}).pop(key, None)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
