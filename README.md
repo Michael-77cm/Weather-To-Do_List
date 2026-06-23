@@ -588,7 +588,7 @@ Responsiveness Improvements:
 - Forecast strip changes from 4 columns → 2 columns → 1 column based on viewport
 
 
-### 8.4 AI Workflow Reflection
+## 8.4 AI Workflow Reflection
 
 - AI improved delivery speed by helping scaffold views, forms, tests, and frontend interactions, which reduced setup time and allowed faster feature iteration.
 - AI supported troubleshooting by suggesting fixes for configuration, validation, and runtime handling, especially during deployment and integration work.
