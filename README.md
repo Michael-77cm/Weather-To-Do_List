@@ -533,16 +533,60 @@ How I Adapted It:
 Summary Table
 |Optimization	|Type	|Impact	|AI Role|
 |---------------|-------|-------|-------|
-|Query Batching	|Backend|	|Reduced queries from 120+ → 1|	|Generated pattern|
-|Transform Animations|	|CSS|	|60fps vs 30fps|	|Suggested technique|
-|Staggered Reveals|	|UX	|Progressive load feel	|Generated pattern|
+|Query Batching	|Backend	|Reduced queries from 120+ → 1	|Generated pattern|
+|Transform Animations	|CSS	|60fps vs 30fps	|Suggested technique|
+|Staggered Reveals	|UX	|Progressive load feel	|Generated pattern|
 |Debounced Search	|JS	|83% fewer API calls	|Generated pattern|
 |Responsive clamp()	|CSS	|Smooth scaling, no jumps	|Suggested technique|
-|Reduced Motion|	|A11y	|Accessibility compliance	|Generated pattern|
+|Reduced Motion	|A11y	|Accessibility compliance	|Generated pattern|
 |Backdrop Blur	|CSS	|GPU accelerated glass effect	|Suggested technique|
 |Media Queries	|CSS	|Mobile-first, 3 breakpoints	|Customized by you|
 
 All of these techniques were AI-generated as foundational patterns, which you then refined and integrated into your weather-to-do-list theme and requirements.
+
+4. Responsive Design with CSS Functions
+AI-Suggested Modern CSS Techniques:
+```
+/* Fluid typography - scales with viewport */
+.brand {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    /* Min: 1.6rem, preferred: 3vw, max: 2.2rem */
+}
+
+/* Dynamic width padding */
+main {
+    width: min(1400px, calc(100% - 2rem));
+    /* Never wider than 1400px, never narrower than viewport - 2rem */
+}
+
+/* Flexible grid that adapts to screen size */
+.dashboard-grid {
+    grid-template-columns: 1.35fr 0.9fr 0.9fr;
+    gap: 1.2rem;
+}
+
+@media (max-width: 1100px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;  /* Stack vertically on tablets */
+    }
+}
+
+@media (max-width: 760px) {
+    .calendar-cell {
+        min-height: 100px;            /* Reduce on mobile */
+        padding: 0.55rem;
+    }
+    
+    .form-row.two-col {
+        grid-template-columns: 1fr;   /* Single column on mobile */
+    }
+}
+```
+Responsiveness Improvements:
+- No breakpoint jumping - smooth scaling between breakpoints using clamp()
+- Touch targets increased to 44px min-height on mobile for accessibility
+- Forecast strip changes from 4 columns → 2 columns → 1 column based on viewport
+
 
 Author: Michael Bello
 GitHub: https://github.com/Michael-77cm/
