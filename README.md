@@ -499,7 +499,7 @@ All code was then manually reviewed and customized for my specific project needs
 |Security configuration	|Critical	|Environment-based settings	|Production-only HSTS|
 |Email reliability	|Reliability|	Idempotency tracking	|Timestamp-based deduplication|
 
-AI provided the foundational patterns for error handling, validation, and environmental configuration, which you refined for your specific use cases (task recurrence, shared tasks, weather APIs).
+AI provided the foundational patterns for error handling, validation, and environmental configuration, which I refined for your specific use cases (task recurrence, shared tasks, weather APIs).
 
 
 
