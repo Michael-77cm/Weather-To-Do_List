@@ -330,6 +330,7 @@ Prompt Used:
 "Create a Django management command that sends email reminders for tasks scheduled for a future date. Include command-line arguments for flexibility."
 
 What AI Generated:
+```
 class Command(BaseCommand):
     help = 'Email reminders for tasks scheduled for a future day.'
 
@@ -344,7 +345,7 @@ class Command(BaseCommand):
             status=TaskStatus.IN_PROGRESS,
             reminder_enabled=True,
         ).select_related('owner')
-
+```
 How You Adapted It:
 - Customized to include shared task recipients from TaskShare model
 - Added last_reminder_sent_on tracking to prevent duplicate reminders
@@ -357,6 +358,7 @@ Prompt Used:
 "Generate Django unit tests for form validation, model creation, and user signup with email duplicate prevention."
 
 What AI Generated:
+```
 class TaskFormValidationTests(TestCase):
     """Test task form validation, especially required fields."""
 
@@ -370,7 +372,7 @@ class TaskFormValidationTests(TestCase):
         form = TaskForm(form_data)
         self.assertFalse(form.is_valid())
         self.assertIn('title', form.errors)
-
+```
 How I Adapted It:
 - Customized test data to match your specific task categories (work, shopping, business)
 - Added recurrence validation tests specific to your scheduling feature
