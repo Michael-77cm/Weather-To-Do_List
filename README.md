@@ -409,6 +409,7 @@ function renderScene(condition, isDay) {
     }
 }
 
+
 How I Adapted It:
 - Added vibe-aware particle count scaling (withVibeCount() function)
 - Integrated with localStorage for persisting user vibe preference
