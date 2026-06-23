@@ -490,13 +490,14 @@ All code was then manually reviewed and customized for my specific project needs
 
 8.2 Summary of AI Debugging Strategy
 ---
-Issue	Type	AI Diagnosis	Your Adaptation
-Database config conflicts	Critical	Unified with dj-database-url	Added SQLite cleanup
-API timeouts	Reliability	Try/except with timeout	Consistent pattern across views
-Invalid date inputs	Security	Input validation & bounds	Calendar-aware clamping
-Cross-field form validation	Data Integrity	Multi-field clean() method	Recurrence-specific logic
-Security configuration	Critical	Environment-based settings	Production-only HSTS
-Email reliability	Reliability	Idempotency tracking	Timestamp-based deduplication
+|Issue	Type	|AI Diagnosis	|My Adaptation|
+|---------------|---------------|-------------|
+|Database config conflicts	|Critical	|Unified with dj-database-url	|Added SQLite cleanup|
+|API timeouts	|Reliability	|Try/except with timeout	|Consistent pattern across views|
+|Invalid date inputs	|Security	Input validation & bounds	|Calendar-aware clamping
+|Cross-field form validation	|Data Integrity	Multi-field clean() method	|Recurrence-specific logic
+|Security configuration	Critical	|Environment-based settings	|Production-only HSTS
+|Email reliability	|Reliability	Idempotency tracking	|Timestamp-based deduplication
 AI provided the foundational patterns for error handling, validation, and environmental configuration, which you refined for your specific use cases (task recurrence, shared tasks, weather APIs).
 
 
