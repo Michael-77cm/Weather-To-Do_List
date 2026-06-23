@@ -321,6 +321,99 @@ Now your deployed app is connected to your PostgreSQL cloud database.
 ---
 AI and Github Copit were used throughout this project to generate the basic structure of code, debug and resolve code errors, automate repetitive tasks, create automated tests on the website and improve the responsiveness of the website. I manually reviewed the code for accuracy, suitability, ensured there were no security issues and made changes to the code before deployment. 
 
+In using Github Copilot to generate codes, below from 1 - 5 are instances where it was used: 
+1. Automated Task Reminder Email System
+File: send_task_reminders.py
+
+Prompt Used:
+"Create a Django management command that sends email reminders for tasks scheduled for a future date. Include command-line arguments for flexibility."
+
+What AI Generated:
+
+
+How You Adapted It:
+- Customized to include shared task recipients from TaskShare model
+- Added last_reminder_sent_on tracking to prevent duplicate reminders
+- Integrated with your project's email settings and task status system
+  
+2. Comprehensive Test Suite
+File: tests.py
+
+Prompt Used:
+"Generate Django unit tests for form validation, model creation, and user signup with email duplicate prevention."
+
+What AI Generated:
+
+
+How I Adapted It:
+- Customized test data to match your specific task categories (work, shopping, business)
+- Added recurrence validation tests specific to your scheduling feature
+- Extended signup tests to cover duplicate email prevention
+  
+3. Weather Visualization with Dynamic Scenes
+File: app.js:1-100
+
+Likely Prompt Used:
+
+"Create JavaScript functions to render animated weather scenes (clear, cloudy, rain, snow, storm, mist) with DOM manipulation. Support multiple visual 'vibes' (realistic, playful, dramatic)."
+
+What AI Generated:
+
+
+How I Adapted It:
+
+- Added vibe-aware particle count scaling (withVibeCount() function)
+- Integrated with localStorage for persisting user vibe preference
+- Connected to API endpoints (/api/weather/, /api/cities/)
+- Added responsive debounced city search functionality
+  
+4. Query Optimization & Permission Handling
+File: views.py:1-100
+
+Prompt Used:
+
+"Create Django view helper functions for efficient database queries with task sharing and permissions. Include filtering by owner and accepted shares."
+
+What AI Generated:
+
+
+How I Adapted It:
+
+- Extended to handle shared tasks with accept/decline workflow
+- Added edit permission checks for collaborative features
+- Implemented decorate_task_permissions() to enhance task objects with permission metadata
+  
+5. Form Validation with Field Interdependencies
+File: forms.py
+
+Likely Prompt Used:
+
+"Create a Django ModelForm for tasks with validation that ensures recurrence end dates are after task start dates."
+
+What AI Generated:
+
+
+How I Adapted It:
+
+- Customized for your specific recurrence choices (DAILY, WEEKLY, MONTHLY, YEARLY)
+- Added logic to reset recurrence_ends_on when no recurrence is selected
+- Integrated email validation for duplicate prevention in signup form
+  
+Summary of AI Generation Strategy
+AI was primarily used to bootstrap:
+
+✅ Django command structure and patterns
+✅ Test scaffolding and common test patterns
+✅ DOM manipulation for dynamic animations
+✅ Query optimization patterns with prefetch/select_related
+✅ Form validation logic and cross-field validation
+All code was then manually reviewed and customized for my specific project needs (task sharing, weather vibes, recurring tasks, etc.).
+
+
+
+
+
+
 Author: Michael Bello
 GitHub: https://github.com/Michael-77cm/
 
