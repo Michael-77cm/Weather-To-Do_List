@@ -501,7 +501,32 @@ All code was then manually reviewed and customized for my specific project needs
 
 AI provided the foundational patterns for error handling, validation, and environmental configuration, which I refined for your specific use cases (task recurrence, shared tasks, weather APIs).
 
+2. API Request Timeout & Failure Handling
+File: views.py:255-270
 
+The Problem (AI Diagnosis):
+External API calls to Open-Meteo could hang or fail, causing the entire request to fail with a poor user experience.
+
+AI-Generated Fix Pattern:
+try:
+    response = requests.get(
+        WEATHER_URL,
+        params={...},
+        timeout=10,  # Prevents infinite hanging
+    )
+    response.raise_for_status()  # Explicit error handling
+except requests.RequestException:
+    return JsonResponse(
+        {'error': 'Weather data is unavailable right now.'}, 
+        status=502  # Server error, not client error
+    )
+
+How I Adapted It:
+
+- Applied same pattern to city search (line 220-227) for consistency
+- Returns user-friendly error messages instead of raw exception tracebacks
+- Sets HTTP 502 status to indicate external service issue
+- Similarly applied to send_mail() with fail_silently=True in reminders command
 
 
 Author: Michael Bello
