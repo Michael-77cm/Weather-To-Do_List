@@ -494,8 +494,8 @@ All code was then manually reviewed and customized for my specific project needs
 |-------|--------|---------------|-------------|
 |Database config conflicts	|Critical	|Unified with dj-database-url	|Added SQLite cleanup|
 |API timeouts	|Reliability|	|Try/except with timeout	|Consistent pattern across views|
-|Invalid date inputs	|Security|	Input validation & bounds	|Calendar-aware clamping|
-|Cross-field form validation	|Data Integrity|	Multi-field clean() method	|Recurrence-specific logic|
+|Invalid date inputs	|Security	|Input validation & bounds	|Calendar-aware clamping|
+|Cross-field form validation	|Data Integrity	|Multi-field clean() method	|Recurrence-specific logic|
 |Security configuration	|Critical|	|Environment-based settings	|Production-only HSTS|
 |Email reliability	|Reliability|	Idempotency tracking	|Timestamp-based deduplication|
 
