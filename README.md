@@ -323,7 +323,7 @@ AI and Github Copit were used throughout this project to generate the basic stru
 
 In using Github Copilot to generate codes, below from 1 - 5 are instances where it was used: 
 ---
-1. Automated Task Reminder Email System
+## 1. Automated Task Reminder Email System
 File: send_task_reminders.py
 
 Prompt Used:
@@ -350,7 +350,7 @@ How You Adapted It:
 - Added last_reminder_sent_on tracking to prevent duplicate reminders
 - Integrated with your project's email settings and task status system
   
-2. Comprehensive Test Suite
+## 2. Comprehensive Test Suite
 File: tests.py
 
 Prompt Used:
@@ -376,7 +376,7 @@ How I Adapted It:
 - Added recurrence validation tests specific to your scheduling feature
 - Extended signup tests to cover duplicate email prevention
   
-3. Weather Visualization with Dynamic Scenes
+## 3. Weather Visualization with Dynamic Scenes
 File: app.js:1-100
 
 Likely Prompt Used:
@@ -447,7 +447,7 @@ How I Adapted It:
 - Added edit permission checks for collaborative features
 - Implemented decorate_task_permissions() to enhance task objects with permission metadata
   
-5. Form Validation with Field Interdependencies
+## 5. Form Validation with Field Interdependencies
 File: forms.py
 
 Prompt Used:
