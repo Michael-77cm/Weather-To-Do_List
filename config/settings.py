@@ -27,6 +27,8 @@ try:
 except ImportError:
     HAS_WHITENOISE = False
 
+from django.core.exceptions import ImproperlyConfigured
+
 def env_bool(name, default=False):
     return os.getenv(name, str(default)).lower() in {"1", "true", "yes", "on"}
 
@@ -54,9 +56,9 @@ load_local_env(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Fallback keeps the app from hard-crashing if env vars are missing, but
-# production should always provide a real SECRET_KEY via config vars.
-SECRET_KEY = os.getenv('SECRET_KEY', 'dev-insecure-secret-key-change-me')
+SECRET_KEY = os.getenv('SECRET_KEY')
+if not SECRET_KEY:
+    raise ImproperlyConfigured('SECRET_KEY must be set as an environment variable.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env_bool('DEBUG', False)
