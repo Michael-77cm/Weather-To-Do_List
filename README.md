@@ -321,6 +321,26 @@ Now your deployed app is connected to your PostgreSQL cloud database.
 ---
 AI and Github Copit were used throughout this project to generate the basic structure of code, debug and resolve code errors, automate repetitive tasks, create automated tests on the website and improve the responsiveness of the website. I manually reviewed the code for accuracy, suitability, ensured there were no security issues and made changes to the code before deployment.    
 
+### AI Workflow Reflection
+
+- AI improved delivery speed by helping scaffold views, forms, tests, and frontend interactions, which reduced setup time and allowed faster feature iteration.
+- AI supported troubleshooting by suggesting fixes for configuration, validation, and runtime handling, especially during deployment and integration work.
+- AI improved UX responsiveness through patterns like debounced search, async API handling, responsive breakpoints, and smoother CSS animation timing.
+
+### Where AI Fell Short
+
+- Some suggestions were too generic for this project's environment and required adaptation for local SQLite and production PostgreSQL compatibility.
+- A few outputs introduced conflicting or overly broad logic in settings and deployment flow, which had to be corrected through manual review and testing.
+- AI could miss edge cases in external API behavior, so defensive error handling and fallback responses were added before release.
+
+### What I Learned About Prompting Effectively
+
+- Specify technical constraints early (Django version, hosting platform, database behavior, environment variable requirements).
+- Ask AI to state assumptions and include edge-case handling, not only the happy path.
+- Request production-safe defaults (no hardcoded secrets, secure defaults, and clear env-driven config).
+- Ask for validation steps with each change (why this fix works, what it impacts, and what should be tested).
+- Use focused prompts for focused outcomes, for example: optimize this queryset for N+1 queries, or improve mobile responsiveness without changing core layout.
+
 Author: Michael Bello
 GitHub: https://github.com/Michael-77cm/ 
 
