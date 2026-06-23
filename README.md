@@ -384,6 +384,7 @@ Likely Prompt Used:
 "Create JavaScript functions to render animated weather scenes (clear, cloudy, rain, snow, storm, mist) with DOM manipulation. Support multiple visual 'vibes' (realistic, playful, dramatic)."
 
 What AI Generated:
+```
 function createParticles(className, count) {
     const fragment = document.createDocumentFragment();
     for (let index = 0; index < count; index += 1) {
@@ -408,7 +409,7 @@ function renderScene(condition, isDay) {
         // ... other conditions
     }
 }
-
+```
 
 How I Adapted It:
 - Added vibe-aware particle count scaling (withVibeCount() function)
@@ -424,6 +425,7 @@ Prompt Used:
 "Create Django view helper functions for efficient database queries with task sharing and permissions. Include filtering by owner and accepted shares."
 
 What AI Generated:
+```
 def task_queryset_for_user(user):
     return (
         Task.objects.filter(
@@ -442,7 +444,7 @@ def decorate_task_permissions(tasks, user):
             for share in task.shares.all()
         )
     return tasks
-
+```
 How I Adapted It:
 - Extended to handle shared tasks with accept/decline workflow
 - Added edit permission checks for collaborative features
@@ -455,6 +457,7 @@ Prompt Used:
 "Create a Django ModelForm for tasks with validation that ensures recurrence end dates are after task start dates."
 
 What AI Generated:
+
 def clean(self):
     cleaned = super().clean()
     recurrence = cleaned.get('recurrence')
