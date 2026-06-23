@@ -322,6 +322,7 @@ Now your deployed app is connected to your PostgreSQL cloud database.
 AI and Github Copit were used throughout this project to generate the basic structure of code, debug and resolve code errors, automate repetitive tasks, create automated tests on the website and improve the responsiveness of the website. I manually reviewed the code for accuracy, suitability, ensured there were no security issues and made changes to the code before deployment. 
 
 In using Github Copilot to generate codes, below from 1 - 5 are instances where it was used: 
+---
 1. Automated Task Reminder Email System
 File: send_task_reminders.py
 
@@ -329,7 +330,20 @@ Prompt Used:
 "Create a Django management command that sends email reminders for tasks scheduled for a future date. Include command-line arguments for flexibility."
 
 What AI Generated:
+class Command(BaseCommand):
+    help = 'Email reminders for tasks scheduled for a future day.'
 
+    def add_arguments(self, parser):
+        parser.add_argument('--days-ahead', type=int, default=1, help='Send reminders for tasks due N days ahead.')
+
+    def handle(self, *args, **options):
+        today = timezone.localdate()
+        target_date = today + timedelta(days=options['days_ahead'])
+        tasks = Task.objects.filter(
+            scheduled_for=target_date,
+            status=TaskStatus.IN_PROGRESS,
+            reminder_enabled=True,
+        ).select_related('owner')
 
 How You Adapted It:
 - Customized to include shared task recipients from TaskShare model
@@ -343,7 +357,19 @@ Prompt Used:
 "Generate Django unit tests for form validation, model creation, and user signup with email duplicate prevention."
 
 What AI Generated:
+class TaskFormValidationTests(TestCase):
+    """Test task form validation, especially required fields."""
 
+    def test_task_form_requires_title(self):
+        """Task creation must have a non-empty title."""
+        form_data = {
+            'title': '   ',  # Whitespace only
+            'description': 'Some description',
+            ...
+        }
+        form = TaskForm(form_data)
+        self.assertFalse(form.is_valid())
+        self.assertIn('title', form.errors)
 
 How I Adapted It:
 - Customized test data to match your specific task categories (work, shopping, business)
@@ -358,10 +384,32 @@ Likely Prompt Used:
 "Create JavaScript functions to render animated weather scenes (clear, cloudy, rain, snow, storm, mist) with DOM manipulation. Support multiple visual 'vibes' (realistic, playful, dramatic)."
 
 What AI Generated:
+function createParticles(className, count) {
+    const fragment = document.createDocumentFragment();
+    for (let index = 0; index < count; index += 1) {
+        const particle = document.createElement('span');
+        particle.className = className;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 2}s`;
+        particle.style.animationDuration = `${1.2 + Math.random() * 1.8}s`;
+        fragment.appendChild(particle);
+    }
+    return fragment;
+}
 
+function renderScene(condition, isDay) {
+    // Large switch statement with scene rendering logic
+    switch (condition) {
+        case 'clear': {
+            const sun = document.createElement('div');
+            sun.className = isDay ? 'sun' : 'moon';
+            // ... creates sun/moon and stars for night
+        }
+        // ... other conditions
+    }
+}
 
 How I Adapted It:
-
 - Added vibe-aware particle count scaling (withVibeCount() function)
 - Integrated with localStorage for persisting user vibe preference
 - Connected to API endpoints (/api/weather/, /api/cities/)
@@ -375,10 +423,26 @@ Prompt Used:
 "Create Django view helper functions for efficient database queries with task sharing and permissions. Include filtering by owner and accepted shares."
 
 What AI Generated:
+def task_queryset_for_user(user):
+    return (
+        Task.objects.filter(
+            Q(owner=user) | Q(shares__recipient=user, shares__status=TaskShareStatus.ACCEPTED)
+        )
+        .select_related('owner')
+        .prefetch_related('shares__recipient', 'attachments')
+        .distinct()
+    )
 
+def decorate_task_permissions(tasks, user):
+    for task in tasks:
+        task.user_is_owner = task.owner_id == user.id
+        task.user_can_edit = task.user_is_owner or any(
+            share.recipient_id == user.id and share.status == TaskShareStatus.ACCEPTED and share.can_edit
+            for share in task.shares.all()
+        )
+    return tasks
 
 How I Adapted It:
-
 - Extended to handle shared tasks with accept/decline workflow
 - Added edit permission checks for collaborative features
 - Implemented decorate_task_permissions() to enhance task objects with permission metadata
@@ -386,15 +450,24 @@ How I Adapted It:
 5. Form Validation with Field Interdependencies
 File: forms.py
 
-Likely Prompt Used:
-
+Prompt Used:
 "Create a Django ModelForm for tasks with validation that ensures recurrence end dates are after task start dates."
 
 What AI Generated:
+def clean(self):
+    cleaned = super().clean()
+    recurrence = cleaned.get('recurrence')
+    scheduled_for = cleaned.get('scheduled_for')
+    recurrence_ends_on = cleaned.get('recurrence_ends_on')
 
+    if recurrence and recurrence != TaskRecurrence.NONE and recurrence_ends_on and scheduled_for:
+        if recurrence_ends_on < scheduled_for:
+            self.add_error('recurrence_ends_on', 'Recurrence end date must be on or after task date.')
+    if recurrence == TaskRecurrence.NONE:
+        cleaned['recurrence_ends_on'] = None
+    return cleaned
 
 How I Adapted It:
-
 - Customized for your specific recurrence choices (DAILY, WEEKLY, MONTHLY, YEARLY)
 - Added logic to reset recurrence_ends_on when no recurrence is selected
 - Integrated email validation for duplicate prevention in signup form
