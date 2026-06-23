@@ -415,7 +415,7 @@ How I Adapted It:
 - Connected to API endpoints (/api/weather/, /api/cities/)
 - Added responsive debounced city search functionality
   
-4. Query Optimization & Permission Handling
+## 4. Query Optimization & Permission Handling
 File: views.py:1-100
 
 Prompt Used:
@@ -475,11 +475,11 @@ How I Adapted It:
 Summary of AI Generation Strategy
 AI was primarily used to bootstrap:
 
-✅ Django command structure and patterns
-✅ Test scaffolding and common test patterns
-✅ DOM manipulation for dynamic animations
-✅ Query optimization patterns with prefetch/select_related
-✅ Form validation logic and cross-field validation
+- ✅ Django command structure and patterns
+- ✅ Test scaffolding and common test patterns
+- ✅ DOM manipulation for dynamic animations
+- ✅ Query optimization patterns with prefetch/select_related
+- ✅ Form validation logic and cross-field validation
 All code was then manually reviewed and customized for my specific project needs (task sharing, weather vibes, recurring tasks, etc.).
 
 
