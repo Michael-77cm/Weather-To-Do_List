@@ -6,3 +6,7 @@ __pycache__/
 data.json
 tests.py
 planner/tests.py
+
+# Ignore SQLite databases and pyenv version files
+*.sqlite3
+.python-version
