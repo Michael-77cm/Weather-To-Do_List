@@ -508,6 +508,7 @@ The Problem (AI Diagnosis):
 External API calls to Open-Meteo could hang or fail, causing the entire request to fail with a poor user experience.
 
 AI-Generated Fix Pattern:
+```
 try:
     response = requests.get(
         WEATHER_URL,
@@ -520,7 +521,7 @@ except requests.RequestException:
         {'error': 'Weather data is unavailable right now.'}, 
         status=502  # Server error, not client error
     )
-
+```
 How I Adapted It:
 
 - Applied same pattern to city search (line 220-227) for consistency
