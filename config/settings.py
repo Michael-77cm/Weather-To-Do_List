@@ -129,17 +129,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-default_db_url = f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
-if dj_database_url:
+database_url = os.getenv('DATABASE_URL')
+if dj_database_url and database_url:
     # Only add ssl_require for non-SQLite databases in production
-    db_url = os.getenv('DATABASE_URL', default_db_url)
     config_kwargs = {
-        'default': db_url,
+        'default': database_url,
         'conn_max_age': 600,
     }
-    if not db_url.startswith('sqlite://') and not DEBUG:
+    if not DEBUG:
         config_kwargs['ssl_require'] = True
-    
+
     DATABASES = {
         'default': dj_database_url.config(**config_kwargs)
     }
